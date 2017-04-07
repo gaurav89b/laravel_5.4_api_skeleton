@@ -1,0 +1,170 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Tutorly App API Documentation",
+        "version": "1.0.0"
+    },
+    "host": "localhost:8555",
+    "basePath": "/api",
+    "paths": {
+        "/login": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "To login to application",
+                "description": "Method to login via API",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json; version:1"
+                ],
+                "parameters": [
+                    {
+                        "name": "twistar-device-id",
+                        "in": "header",
+                        "description": "This is unique device identifier.",
+                        "required": true,
+                        "type": "string",
+                        "default": "1272yy2-2828u2-22nj22j"
+                    },
+                    {
+                        "name": "twistar-device-type",
+                        "in": "header",
+                        "description": "This is device type.e.g: ios",
+                        "required": true,
+                        "type": "string",
+                        "default": "ios"
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "application/json,",
+                        "required": true,
+                        "type": "string",
+                        "default": "application/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type",
+                        "required": true,
+                        "type": "string",
+                        "default": "application/json"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "User email.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "User password.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User details with token."
+                    },
+                    "default": {
+                        "description": "Error message with details."
+                    },
+                    "400": {
+                        "description": "Invalid username/password supplied."
+                    },
+                    "500": {
+                        "description": "Application issue, Please contact API maintenance Team."
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "get": {
+                "tags": [
+                    "Logout"
+                ],
+                "summary": "To logout of application",
+                "description": "Method to logout via API",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/xml",
+                    "application/json; version:1"
+                ],
+                "parameters": [
+                    {
+                        "name": "twistar-device-id",
+                        "in": "header",
+                        "description": "This is unique device identifier.",
+                        "required": true,
+                        "type": "string",
+                        "default": "1272yy2-2828u2-22nj22j"
+                    },
+                    {
+                        "name": "twistar-device-type",
+                        "in": "header",
+                        "description": "This is device type.e.g: ios",
+                        "required": true,
+                        "type": "string",
+                        "default": "ios"
+                    },
+                    {
+                        "name": "twistar-auth-token",
+                        "in": "header",
+                        "description": "This is unique device identifier.",
+                        "required": true,
+                        "type": "string",
+                        "default": "12hh2jwjkwwiu2u2u22"
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "application/json,",
+                        "required": true,
+                        "type": "string",
+                        "default": "application/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type",
+                        "required": true,
+                        "type": "string",
+                        "default": "application/json"
+                    },
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Authorization token. Format Bearer {token}",
+                        "required": true,
+                        "type": "string",
+                        "default": "Bearer {Insert token & remove brackets}"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User details with token."
+                    },
+                    "default": {
+                        "description": "Error message with details"
+                    },
+                    "400": {
+                        "description": "Invalid token supplied."
+                    },
+                    "500": {
+                        "description": "Application issue, Please contact API maintenance Team."
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
