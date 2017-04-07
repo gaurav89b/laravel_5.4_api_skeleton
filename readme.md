@@ -1,3 +1,23 @@
+ 
+## Steps to follow
+
+cp .env.example .env
+
+2 php artisan key:generate
+
+3 Make database entry in .env file
+
+4 php artisan migrate
+
+5 php artisan db:seed
+
+6 php artisan serve --port=8555
+
+7 Open http://localhost:8555/api/documentation  
+
+8 Bingo!!! Swagger Document with Login / logout API is there. You can take it further from here.
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
